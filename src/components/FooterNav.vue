@@ -1,19 +1,18 @@
 <template>
     <div class="nav">
         <ul>
-            <router-link to="film" tag="li" active-class="active">
+            <router-link to="/film" tag="li" active-class="active">
                 <i class="iconfont icondianying"></i>
                 <p>电影</p>
             </router-link>
-            <router-link to="cinema" tag="li" active-class="active">
+            <router-link to="/cinema" tag="li" active-class="active">
                 <i class="iconfont iconyingyuan"></i>
                 <p>影院</p>
             </router-link>
-            <router-link to="center" tag="li" active-class="active">
+            <router-link to="/center" tag="li" active-class="active">
                 <i class="iconfont icongeren"></i>
                 <p>我的</p>
             </router-link>
-            
         </ul>
     </div>
 </template>
@@ -41,7 +40,6 @@ export default {
         display: flex;
         align-items: center;
         li {
-            list-style: none;
             margin-top: 5px;
             flex: 1;
             height: 43px;
@@ -54,6 +52,7 @@ export default {
             i {
                 font-size: 20px;
             }
+            list-style: none;
         }
     }
 }

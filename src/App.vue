@@ -1,32 +1,41 @@
 <template>
-  <div id="app">
-    <FooterNav/>
-    <router-view/>
-  </div>
+    <div id="app">
+        <FooterNav v-if="is_show"></FooterNav>
+        <router-view />
+    </div>
 </template>
 
 <script>
-//导入需要的组件
-//入口    名字     从       路径
-import FooterNav from '@/components/FooterNav'
+// 导入需要使用组件
+import FooterNav from "@/components/FooterNav";
 export default {
-  //组件
-  components:{
-    FooterNav,
-  },
+    data() {
+        return {
+            is_show: true
+        }
+    },
+    components: {
+        FooterNav,
+    },
+    created() {
+        this.eventBus.$on('footernav',(mark) => {
+            this.is_show = mark
+        })  
+    },
 };
 </script>
 
 <style lang="scss">
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
 }
-html,body{
-    height: 100%;
+html,
+body {
     touch-action: none;
+    height: 100%;
     ul,
-    li{
+    li {
         list-style: none;
     }
 }
